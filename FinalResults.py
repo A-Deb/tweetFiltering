@@ -121,8 +121,14 @@ dfResultsNonRelevant.to_csv('Dataframe_Removed', sep='\t', encoding='utf-8')
 
 
 
-pyplot.scatter(resultRelevant[:, 0], resultRelevant[:, 1], color="blue")
 
-pyplot.scatter(resultNonRelevant[:, 0], resultNonRelevant[:, 1], color = "red")
-pyplot.show()
+
+pyplot.scatter(resultRelevant[:, 0], resultRelevant[:, 1], color="blue", label='remain')
+
+pyplot.scatter(resultNonRelevant[:, 0], resultNonRelevant[:, 1], color = "red", label='removed')
+pyplot.title('Fire Example Filtering PCA',size = 20)
+pyplot.legend(loc='upper right')
+pyplot.savefig('fire.pdf',bbox_inces='tight')
+
+#pyplot.show()
 
